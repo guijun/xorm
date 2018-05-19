@@ -55,7 +55,7 @@ func (sqlTemplatesExecutor *SqlTemplatesExecutor) Execute() ([][]map[string]inte
 			case "select":
 				model_1_results = sqlTemplatesExecutor.session.SqlTemplateClient(sqlkey).Query()
 				sqlModel = 1
-			case "insert", "delete", "update", "create", "drop":
+			case "replace", "insert", "delete", "update", "create", "drop":
 				model_2_results, err = sqlTemplatesExecutor.session.SqlTemplateClient(sqlkey).Execute()
 				sqlModel = 2
 			default:
@@ -83,7 +83,7 @@ func (sqlTemplatesExecutor *SqlTemplatesExecutor) Execute() ([][]map[string]inte
 				case "select":
 					model_1_results = sqlTemplatesExecutor.session.SqlTemplateClient(sqlkey, &parmaMap[0]).Query()
 					sqlModel = 1
-				case "insert", "delete", "update", "create", "drop":
+				case "replace", "insert", "delete", "update", "create", "drop":
 					model_2_results, err = sqlTemplatesExecutor.session.SqlTemplateClient(sqlkey, &parmaMap[0]).Execute()
 					sqlModel = 2
 				default:
@@ -109,7 +109,7 @@ func (sqlTemplatesExecutor *SqlTemplatesExecutor) Execute() ([][]map[string]inte
 				case "select":
 					model_1_results = sqlTemplatesExecutor.session.SqlTemplateClient(sqlkey, &parmaMap).Query()
 					sqlModel = 1
-				case "insert", "delete", "update", "create", "drop":
+				case "replace", "insert", "delete", "update", "create", "drop":
 					model_2_results, err = sqlTemplatesExecutor.session.SqlTemplateClient(sqlkey, &parmaMap).Execute()
 					sqlModel = 2
 				default:
@@ -191,7 +191,7 @@ func (sqlTemplatesExecutor *SqlTemplatesExecutor) Execute() ([][]map[string]inte
 				case "select":
 					model_1_results = sqlTemplatesExecutor.session.SqlTemplateClient(sqlkeysSlice[i]).Query()
 					sqlModel = 1
-				case "insert", "delete", "update", "create", "drop":
+				case "replace", "insert", "delete", "update", "create", "drop":
 					model_2_results, err = sqlTemplatesExecutor.session.SqlTemplateClient(sqlkeysSlice[i]).Execute()
 					sqlModel = 2
 				default:
@@ -285,7 +285,7 @@ func (sqlTemplatesExecutor *SqlTemplatesExecutor) Execute() ([][]map[string]inte
 					case "select":
 						model_1_results = sqlTemplatesExecutor.session.SqlTemplateClient(sqlkeysSlice[i]).Query()
 						sqlModel = 1
-					case "insert", "delete", "update", "create", "drop":
+					case "replace", "insert", "delete", "update", "create", "drop":
 						model_2_results, err = sqlTemplatesExecutor.session.SqlTemplateClient(sqlkeysSlice[i]).Execute()
 						sqlModel = 2
 					default:
@@ -296,7 +296,7 @@ func (sqlTemplatesExecutor *SqlTemplatesExecutor) Execute() ([][]map[string]inte
 					case "select":
 						model_1_results = sqlTemplatesExecutor.session.SqlTemplateClient(sqlkeysSlice[i], &parmaSlice[i]).Query()
 						sqlModel = 1
-					case "insert", "delete", "update", "create", "drop":
+					case "replace", "insert", "delete", "update", "create", "drop":
 						model_2_results, err = sqlTemplatesExecutor.session.SqlTemplateClient(sqlkeysSlice[i], &parmaSlice[i]).Execute()
 						sqlModel = 2
 					default:
@@ -392,7 +392,7 @@ func (sqlTemplatesExecutor *SqlTemplatesExecutor) Execute() ([][]map[string]inte
 				case "select":
 					model_1_results = sqlTemplatesExecutor.session.SqlTemplateClient(sqlkeysMap[k]).Query()
 					sqlModel = 1
-				case "insert", "delete", "update", "create", "drop":
+				case "replace", "insert", "delete", "update", "create", "drop":
 					model_2_results, err = sqlTemplatesExecutor.session.SqlTemplateClient(sqlkeysMap[k]).Execute()
 					sqlModel = 2
 				default:
@@ -485,7 +485,7 @@ func (sqlTemplatesExecutor *SqlTemplatesExecutor) Execute() ([][]map[string]inte
 					case "select":
 						model_1_results = sqlTemplatesExecutor.session.SqlTemplateClient(sqlkeysMap[k]).Query()
 						sqlModel = 1
-					case "insert", "delete", "update", "create", "drop":
+					case "replace", "insert", "delete", "update", "create", "drop":
 						model_2_results, err = sqlTemplatesExecutor.session.SqlTemplateClient(sqlkeysMap[k]).Execute()
 						sqlModel = 2
 					default:
@@ -497,7 +497,7 @@ func (sqlTemplatesExecutor *SqlTemplatesExecutor) Execute() ([][]map[string]inte
 					case "select":
 						model_1_results = sqlTemplatesExecutor.session.SqlTemplateClient(sqlkeysMap[k], &parmaMap).Query()
 						sqlModel = 1
-					case "insert", "delete", "update", "create", "drop":
+					case "replace", "insert", "delete", "update", "create", "drop":
 						model_2_results, err = sqlTemplatesExecutor.session.SqlTemplateClient(sqlkeysMap[k], &parmaMap).Execute()
 						sqlModel = 2
 					default:

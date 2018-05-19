@@ -45,7 +45,7 @@ func (sqlMapsExecutor *SqlMapsExecutor) Execute() ([][]map[string]interface{}, m
 			case "select":
 				model_1_results = sqlMapsExecutor.session.SqlMapClient(sqlkey).Query()
 				sqlModel = 1
-			case "insert", "delete", "update", "create", "drop":
+			case "replace","insert", "delete", "update", "create", "drop":
 				model_2_results, err = sqlMapsExecutor.session.SqlMapClient(sqlkey).Execute()
 				sqlModel = 2
 			default:
@@ -60,7 +60,7 @@ func (sqlMapsExecutor *SqlMapsExecutor) Execute() ([][]map[string]interface{}, m
 				case "select":
 					model_1_results = sqlMapsExecutor.session.SqlMapClient(sqlkey, &parmaMap[0]).Query()
 					sqlModel = 1
-				case "insert", "delete", "update", "create", "drop":
+				case "replace", "insert", "delete", "update", "create", "drop":
 					model_2_results, err = sqlMapsExecutor.session.SqlMapClient(sqlkey, &parmaMap[0]).Execute()
 					sqlModel = 2
 				default:
@@ -74,7 +74,7 @@ func (sqlMapsExecutor *SqlMapsExecutor) Execute() ([][]map[string]interface{}, m
 				case "select":
 					model_1_results = sqlMapsExecutor.session.SqlMapClient(sqlkey, &parmaMap).Query()
 					sqlModel = 1
-				case "insert", "delete", "update", "create", "drop":
+				case "replace", "insert", "delete", "update", "create", "drop":
 					model_2_results, err = sqlMapsExecutor.session.SqlMapClient(sqlkey, &parmaMap).Execute()
 					sqlModel = 2
 				default:
@@ -170,7 +170,7 @@ func (sqlMapsExecutor *SqlMapsExecutor) Execute() ([][]map[string]interface{}, m
 				case "select":
 					model_1_results = sqlMapsExecutor.session.SqlMapClient(sqlkeysSlice[i]).Query()
 					sqlModel = 1
-				case "insert", "delete", "update", "create", "drop":
+				case "replace", "insert", "delete", "update", "create", "drop":
 					model_2_results, err = sqlMapsExecutor.session.SqlMapClient(sqlkeysSlice[i]).Execute()
 					sqlModel = 2
 				default:
@@ -253,7 +253,7 @@ func (sqlMapsExecutor *SqlMapsExecutor) Execute() ([][]map[string]interface{}, m
 					case "select":
 						model_1_results = sqlMapsExecutor.session.SqlMapClient(sqlkeysSlice[i]).Query()
 						sqlModel = 1
-					case "insert", "delete", "update", "create", "drop":
+					case "replace", "insert", "delete", "update", "create", "drop":
 						model_2_results, err = sqlMapsExecutor.session.SqlMapClient(sqlkeysSlice[i]).Execute()
 						sqlModel = 2
 					default:
@@ -264,7 +264,7 @@ func (sqlMapsExecutor *SqlMapsExecutor) Execute() ([][]map[string]interface{}, m
 					case "select":
 						model_1_results = sqlMapsExecutor.session.SqlMapClient(sqlkeysSlice[i], &parmaSlice[i]).Query()
 						sqlModel = 1
-					case "insert", "delete", "update", "create", "drop":
+					case "replace", "insert", "delete", "update", "create", "drop":
 						model_2_results, err = sqlMapsExecutor.session.SqlMapClient(sqlkeysSlice[i], &parmaSlice[i]).Execute()
 						sqlModel = 2
 					default:
@@ -349,7 +349,7 @@ func (sqlMapsExecutor *SqlMapsExecutor) Execute() ([][]map[string]interface{}, m
 				case "select":
 					model_1_results = sqlMapsExecutor.session.SqlMapClient(sqlkeysMap[k]).Query()
 					sqlModel = 1
-				case "insert", "delete", "update", "create", "drop":
+				case "replace", "insert", "delete", "update", "create", "drop":
 					model_2_results, err = sqlMapsExecutor.session.SqlMapClient(sqlkeysMap[k]).Execute()
 					sqlModel = 2
 				default:
@@ -432,7 +432,7 @@ func (sqlMapsExecutor *SqlMapsExecutor) Execute() ([][]map[string]interface{}, m
 					case "select":
 						model_1_results = sqlMapsExecutor.session.SqlMapClient(sqlkeysMap[k]).Query()
 						sqlModel = 1
-					case "insert", "delete", "update", "create", "drop":
+					case "replace", "insert", "delete", "update", "create", "drop":
 						model_2_results, err = sqlMapsExecutor.session.SqlMapClient(sqlkeysMap[k]).Execute()
 						sqlModel = 2
 					default:
@@ -444,7 +444,7 @@ func (sqlMapsExecutor *SqlMapsExecutor) Execute() ([][]map[string]interface{}, m
 					case "select":
 						model_1_results = sqlMapsExecutor.session.SqlMapClient(sqlkeysMap[k], &parmaMap).Query()
 						sqlModel = 1
-					case "insert", "delete", "update", "create", "drop":
+					case "replace", "insert", "delete", "update", "create", "drop":
 						model_2_results, err = sqlMapsExecutor.session.SqlMapClient(sqlkeysMap[k], &parmaMap).Execute()
 						sqlModel = 2
 					default:
